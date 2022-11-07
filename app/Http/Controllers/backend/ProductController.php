@@ -101,7 +101,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product=Product::findOrFail($id);
+        return view('backend.product.read', compact('product'));
+
     }
 
     /**
@@ -155,11 +157,10 @@ class ProductController extends Controller
         };
 
        
-        $product = $category->product()->save($product )->with('success','product updated successfully');
+        $product = $category->product()->save($product );
 
-        // $product->update();
 
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success','product updated successfully');
     }
 
     /**

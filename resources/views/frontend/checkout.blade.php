@@ -35,19 +35,7 @@
 									</td>
 
 
-									{{-- <td class="column-3"> Rs.{{ $prod['price']  }}</td> --}}
-									<td class="column-4">
-										{{-- <div class="wrap-num-product flex-w m-l-auto m-r-0 height"> --}}
-											{{-- <input class="mtext-104 cl3 txt-center productId" type="hidden" value= "{{ $prod['product_id']}}" > --}}
-											{{-- data-cartid= "{{ $prod['product_id']}}" --}}
-											
-											
-                                            {{ $prod['price'] }}
-											
-
-											
-										{{-- </div> --}}
-									</td>
+									<td class="column-4">{{ $prod['price'] }}</td>
 									<td class="column-5"> {{ $prod['quantity'] }}</td>
 									
 								</tr>
@@ -119,12 +107,7 @@
 							</div>
 						</div>
 
-						{{-- <a href="{{ route('checkout.index') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
-                        </a> --}}
-                        {{-- <a href="{{ route('product.detail', $products) }}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 " >
-                            Quick View
-                        </a> --}}
+					
                         <a href="{{ route('order.checkout') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
 							Place Order
                         </a>
@@ -141,8 +124,7 @@
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
 	</div>
-	{{-- @include('frontend.layout.register')
-	@include('frontend.layout.login') --}}
+	
 
 
 @endsection

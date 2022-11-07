@@ -20,42 +20,13 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function getCartItem(){
-    //     if(Auth::check()){
-    //         $cartItems= cart::with(['product'=>function($q){
-    //             $q->select('*');
-    //         }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray();
-    //     }else{
-    //         // $cartItems= cart::with(['product'=>function($q){
-    //         //     $q->select('*');
-    //         // }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray();
-    //     }
-    // }
+    
     public function cart()
     {
-        // $orders = User::all(); 
-        // foreach($orders as $order){
-        //     dd($order['first_name']);
-
-        // }
-//                     $users = User::role('admin')->get(); 
-// dd($users['first_name']);
-        //$relatedOrders = $order->related_orders->first();
-       //$hasUser = cartProduct::has('cart')->find(Auth::user()->id);
-
-    //   dd($datas= Product::with('product')->get());
-
-    //  dd( $cartItems= cart::with(['product'=>function($q){
-    //                 $q->select('*');
-    //             }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray());
-    // dd(cartProduct::all());
-
-              $cartItems= cart::with(['product'=>function($q){
-                    $q->select('*');
-                }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray();
-
-        // dd($datas= cart::getCartItem());
-      // dd($cartItems= cart::where('user_id', Auth::user()->id));
+        $cartItems= cart::with(['product'=>function($q){
+            $q->select('*');
+        }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray();
+       
         return view('frontend.shoping-cart', compact('cartItems'));
     }
 
@@ -119,41 +90,14 @@ class CartController extends Controller
        $cartItems= cart::with(['product'=>function($q){
             $q->select('*');
         }])->orderby('id')->where('user_id', Auth::user()->id)->get();
+
         return response()->json(['status'=>'product updated success']);
-                }
-                else{
-                    return response()->json(['status'=>'product updated success']);
+        }
+        else{
+            return response()->json(['status'=>'product updated success']);
     
                 }
-        // $cartItems->quantity=$data['quantity'];
-        // $cartItems->update();
-    //     return response()->json([
-    //     'status'=>true,
-    //     'view'=>(String)View::make('frontend.shoping-cart')->with(compact('cartItems'))
-    // ]);
        }
-
-
-    //     $product_id= $request->input('id');
-    //     $quantity= $request->input('quantity');
-    //   //  dd(cart::where('product_id', $product_id)->where('user_id', Auth::id())->exists());
-
-    //       echo "<pre>"; print_r($product_id); die;
-
-    //     if(Auth::check()){
-    //         if(cartProduct::where('product_id', $product_id)->where('user_id', Auth::id())->exists()){
-    //             $cartItems=cartProduct::where('product_id', $product_id)->where('user_id', Auth::id())->first();
-    //             $cartItems->quantity=$quantity;
-    //             $cartItems->update();
-
-    //             return response()->json(['status'=>'product updated success']);
-    //         }
-    //         else{
-    //             return response()->json(['status'=>'product updated success']);
-
-    //         }
-    //     }
-    //}
 
     /**
      * Remove the specified resource from storage.
@@ -174,22 +118,13 @@ class CartController extends Controller
             cartProduct::where('product_id', $data['productId'])->delete();
             cart::where('id', $data['cartId'])->delete();
 
-      //  }
-        //cartProduct::with('product')->where('user_id', Auth::user()->id)->delete();
-        // echo "<pre>"; print_r($data); die;
-       
-        //cart::where('user_id',Auth::user()->id)->delete();
-        //cartProduct::where('product_id', $data['productId'])->delete();
-        // $cartItems= cart::with(['product'=>function($q){
-        //     $q->select('*');
-        // }])->orderby('id')->where('user_id', Auth::user()->id)->delete();
-       
-        return response()->json(['status'=>'product updated success']);
-                }
-                else{
-                    return response()->json(['status'=>'product updated success']);
+      
+             return response()->json(['status'=>'product updated success']);
+         }
+            else{
+                return response()->json(['status'=>'product updated success']);
     
-        //         }
+       
     }
 }
 

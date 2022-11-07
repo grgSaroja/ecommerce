@@ -19,14 +19,7 @@ class CheckoutController extends Controller
         $cartProduct= cart::with(['product'=>function($q){
                         $q->select('*');
                     }])->orderby('id')->where('user_id', auth()->user()->id)->get()->toArray();
-       // dd($cartProduct);
-
-        //  foreach ($cartProduct as $cart){
-        //             foreach ($cart['product'] as $prod){
-        //                 dd($prod);
-
-        //             }
-        //         }
+    
 
         return view('frontend.checkout',compact('cartProduct'));
     }
@@ -37,28 +30,6 @@ class CheckoutController extends Controller
                     $q->select('*');
                 }])->orderby('id')->where('user_id', auth()->user()->id)->get()->toArray();
         
-                // $cart= cart::where('user_id', auth()->user()->id)->get();
-                // foreach ($cart as $carts){
-                //     dd($carts->id);
-
-                // }
-                // foreach ($cartProduct as $cart){
-                //     foreach ($cart['product'] as $prod){
-                //         dd($prod['cart_id']);
-
-                //     }
-                // }
-
-                // foreach ($cartProduct as $cart){
-                // //    dd( $cart);
-                //     foreach ($cart['product'] as $prod){
-        
-                //         if($prod['stock']< $prod['quantity'] ){
-                //             $_SESSION['message'] == 'not stock Exist';
-        
-                //         }
-                //     }
-                // }
                        foreach ($cartProduct as $cart){
                      foreach ($cart['product'] as $prod){
                         $ticketInfo = explode('-', $prod['quantity']);
@@ -80,7 +51,7 @@ class CheckoutController extends Controller
                     Mail::to('saroja.grg33@gmail.com')->send(new orderMail($orders));
 
         
-                return redirect(route('cart'));
+                return redirect(route('cart'))->with('success', 'your order has been placed');
         
         
             }

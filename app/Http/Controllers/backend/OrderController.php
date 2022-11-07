@@ -30,7 +30,11 @@ class OrderController extends Controller
                     })
                     ->rawColumns(['action'])
                     ->make(true);
+
+                
         }
+
+        
         
         return view('backend.orderIndex');
     }

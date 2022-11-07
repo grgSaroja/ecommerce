@@ -23,28 +23,8 @@ class ProductController extends Controller
     {
 
         $product=Product::all();
-        //dd($product);
-        // $product=Product::has('category')->get();
 
-       
-        $search_result= $request['search'];
-        if($search_result!= ''){
-            $product= Product:: where('product', 'LIKE', '%'.$search_result.'%');
-
-            // $product = $product->map(function ($products, $key) {
-            //                 return [
-            //                             'product' => $products['product'],
-            //                             'image' => Helper::catch_first_image($products['image']),
-            //                        ];
-            //             });          
-
-        }
-        else{
-            $product= Product::get();
-
-        }
-
-        return view('frontend.product',compact(['product','product']));
+        return view('frontend.product',compact('product'));
 
     }
 
@@ -63,80 +43,21 @@ class ProductController extends Controller
     {
         $product =$request->all();
         $user=Auth::id();
-        //$cart = cart::with('user')->find(Auth::user()->id);
-     //dd($cart);
-
-        // $hasUser = User::has('cart')->find(Auth::user()->id);
-        // if($hasUser == null){
-        //     // if(Auth::check()){
+     
                
-        //             $cart = Cart::create([
-        //                 'user_id'=>$user,
+            $cart = Cart::create([
+                'user_id'=>$user,
 
-        //             ]);
-        //             session(['cart_id' => $cart->id]);
-        //             cartProduct::create([
-        //                 'cart_id' => $cart->id,
-        //                 'product_id' => $product['product_id'],
-        //                 'quantity' => $product['quantity'],
+            ]);
+            session(['cart_id' => $cart->id]);
+            cartProduct::create([
+                'cart_id' => $cart->id,
+                'product_id' => $product['product_id'],
+                'quantity' => $product['quantity'],
 
-        //             ]);
-        //        // }  
-        //     } else{
-        //         // $cart = Cart::find($user);
+            ]);
+            return redirect()->back()->with('success','product added to cart');
 
-        //         cartProduct::create([
-        //             'cart_id' => session('cart_id'),
-        //             'product_id' => $product['product_id'],
-        //             'quantity' => $product['quantity'],
-    
-        //         ]);
-        //     }
-
-
-       //  $hasUser = User::has('cart')->find(Auth::user()->id);
-
-        // dd( $table= Cart::where('user_id',$user)->get());
-      //  if($hasUser){
-               
-                    $cart = Cart::create([
-                        'user_id'=>$user,
-
-                    ]);
-                    session(['cart_id' => $cart->id]);
-                    cartProduct::create([
-                        'cart_id' => $cart->id,
-                        'product_id' => $product['product_id'],
-                        'quantity' => $product['quantity'],
-
-                    ]);
-                    return redirect()->back();
-
-               // }  
-            
-            // else{
-            //             $cart = Cart::find($user);
-        
-            //             cartProduct::create([
-            //                 'cart_id' => $cart->id,
-            //                 'product_id' => $product['product_id'],
-            //                 'quantity' => $product['quantity'],
-            
-            //             ]);
-            //         }
-
-           
-  
-
-        // return view('frontend.product',compact('product'));
-    }
-
-    public function cart()
-    {
-        // $product=Product::all();
-        $cartItems= cartProduct::all();
-
-        // return view('frontend.shoping-cart', compact($cartItems));
     }
 
 
@@ -148,19 +69,6 @@ class ProductController extends Controller
 
     }
 
-
-    public function updateCart()
-    {
-        // $product=Product::all();
-        // return view('frontend.product',compact('product'));
-    }
-
-
-    public function destroyCart()
-    {
-        // $product=Product::all();
-        // return view('frontend.product',compact('product'));
-    }
 
 
     /**

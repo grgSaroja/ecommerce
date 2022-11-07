@@ -66,16 +66,6 @@
 
                       </div>
 
-                      {{-- <div class="form-group">
-                        <label>Choose Product Image</label>
-                        <input type="file" name="upload_file" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="file" class="form-control file-upload-info" name="upload_file" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div> --}}
 
 
                       <div class="form-group">

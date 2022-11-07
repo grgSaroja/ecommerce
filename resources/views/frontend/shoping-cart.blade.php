@@ -2,10 +2,10 @@
 
 	@section('content')
 
-	<!-- Shoping Cart -->
 	<form class="bg0 p-t-75 p-b-85" method="POST">
-		{{-- {{ csrf_field() }} --}}
 		<div class="container">
+
+			@include('frontend.layout.flash')
 			@if ( $cartItems)
 
 			<div class="row">

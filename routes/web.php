@@ -15,20 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
-
-
 
 Auth::routes();
 
+Route::get('/', [App\Http\Controllers\GuestController::class, 'index'])->name('index');
+Route::get('/gsearch', [App\Http\Controllers\GuestController::class, 'product_search'])->name('search');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit_profile'])->name('home.profile');
-Route::post('/profile/update/{id}', [App\Http\Controllers\HomeController::class, 'update_profile'])->name('profile.update');
+Route::put('/profile/update/{id}', [App\Http\Controllers\HomeController::class, 'update_profile'])->name('profile.update');
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'product_search'])->name('home.search');
-
 
 
 // forntend routes
@@ -50,15 +46,11 @@ Route::delete('remove-from-cart', [ProductController::class, 'destroyCart'])->na
 Route::get('/product/search', [App\Http\Controllers\frontend\ProductController::class, 'product_search'])->name('product.search');
 
 
-// Route::get('/checkout', [App\Http\Controllers\frontend\CheckoutController::class, 'index'])->name('checkout.index');
-
 });
 
-//Route::get('/send/email',[StudentController::class, 'mail']);
 
 
 // backend routes
-
 Route::group(['middleware' => ['auth', 'role:admin'], 'prefix'=>'admin'], function() { 
 
     Route::get('/dashboard', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
@@ -81,6 +73,8 @@ Route::group(['middleware' => ['auth', 'role:admin'], 'prefix'=>'admin'], functi
 
 
     Route::get('/user', [App\Http\Controllers\backend\UserController::class, 'index'])->name('user.index');
+    Route::get('/user/show/{id}', [App\Http\Controllers\backend\UserController::class, 'show'])->name('user.show');
+
 
     Route::get('/order', [App\Http\Controllers\backend\OrderController::class, 'index'])->name('order.index');
 

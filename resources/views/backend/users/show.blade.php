@@ -20,11 +20,23 @@
 
 @section('content')
 
-
+{{-- <div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Basic Table</h4>
+          <p class="card-description"> Add class <code>.table</code>
+          </p>
+          <div class="table-responsive">
+           
+          </div>
+        </div>
+      </div>
+    </div> --}}
     <div class="main-panel">
         <div class="content-wrapper">
           <div class="page-header">
-            <h3 class="page-title"> Edit Product </h3>
+            <h3 class="page-title"> User Detail </h3>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Forms</a></li>
@@ -33,38 +45,35 @@
             </nav>
           </div>
           <div class="row">
-            <div class="col-12 grid-margin stretch-card">
+            <div class="col-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
                     <table class="table">
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Stock</th>
-                    <th>Price</th>
-
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
                   </tr>
                 </thead>
                 <tbody>
 
-                    <div class="gallery">
-                          <img src="{{ asset('/images/product/'.$product->image) }}"  width="500" height="400">
-                      </div>
+                    
                   <tr>
-                    <td>{{ $product->id }}</td>
-                    <td>{{ $product->product }}</td>
-                    <td>{{ $product->category->category }}</td>
-                    <td>{{ $product->description }}</td>
-                    <td>{{ $product->stock }}</td>
-                    <td>{{ $product->price }}</td>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->first_name }}</td>
+                    <td>{{ $user->last_name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->address }}</td>
+                    <td>{{ $user->number }}</td>
                   </tr>
               
                     </tbody>
                 </table>
-                <a href="{{ route('product.index') }}" class="btn btn-danger ml-2">Back</a>
+                <a href="{{ route('user.index') }}" class="btn btn-danger ml-2">Back</a>
 
                  </div>
 

@@ -34,23 +34,39 @@
 
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
+					@guest
+						<a href="{{ route('index') }}" class="logo">
+							<img src="frontend/images/icons/logo-01.png" alt="IMG-LOGO">
+						</a>
+					@else
+						<a href="{{ route('home') }}" class="logo">
+							<img src="frontend/images/icons/logo-01.png" alt="IMG-LOGO">
+						</a>
+					@endguest
 					
-					<!-- Logo desktop -->		
-					<a href="{{ route('home') }}" class="logo">
-						<img src="frontend/images/icons/logo-01.png" alt="IMG-LOGO">
-					</a>
 
-					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
-								<a href="{{ route('home') }}">Home</a>
-								
-							</li>
+							@guest
+								<li class="active-menu">
+									<a href="{{ route('index') }}">Home</a>
+									
+								</li>
+	
+							@else
+
+								<li class="active-menu">
+									<a href="{{ route('home') }}">Home</a>
+									
+								</li>
+
+							@endguest
 
 							<li>
 								<a href="{{ route('product') }}">Shop</a>
 							</li>
+
+						
 
 
 						</ul>

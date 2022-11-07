@@ -32,7 +32,7 @@
 							<i class="zmdi zmdi-search"></i>
 						</button>
 
-						<form action="{{ route('home.search') }}" method="GET">
+						<form action="{{ route('search') }}" method="GET">
                             <input id="searching" class="mtext-107 cl2 size-114 plh2 p-r-15 find " type="text" placeholder="Search" name="search" aria-label="Search">
                            
                         </form>

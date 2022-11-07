@@ -7,7 +7,12 @@
       <!-- Shoping Cart -->
       <form class="bg0 p-t-75 p-b-85" action="{{ route('cart.store', $product_detail) }}" method="POST">
           <div class="container">
-        
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>	
+                    <strong>{{ $message }}</strong>
+            </div>
+            @endif
               <div class="row">
                 <div class="col-md-6 col-lg-7 p-b-30">
                     <div class="p-l-25 p-r-30 p-lr-0-lg">
