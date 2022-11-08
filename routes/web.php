@@ -26,9 +26,9 @@ Route::get('/profile/edit/{id}', [App\Http\Controllers\HomeController::class, 'e
 Route::put('/profile/update/{id}', [App\Http\Controllers\HomeController::class, 'update_profile'])->name('profile.update');
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'product_search'])->name('home.search');
 
-// ['middleware' => ['web', 'auth']
+
 // forntend routes
-Route::group(['middleware' => ['auth', 'web'], 'prefix'=>'front'], function() { 
+Route::group(['middleware' => ['auth', 'role:user'], 'prefix'=>'front'], function() { 
 
 Route::get('/cart', [App\Http\Controllers\frontend\CartController::class, 'cart'])->name('cart');
 Route::post('update-cart', [App\Http\Controllers\frontend\CartController::class, 'update'])->name('cart.update');
@@ -51,7 +51,7 @@ Route::get('/product/search', [App\Http\Controllers\frontend\ProductController::
 
 
 // backend routes
-Route::group(['middleware' => ['auth', 'web'], 'prefix'=>'admin'], function() { 
+Route::group(['middleware' => ['auth', 'role:admin'], 'prefix'=>'admin'], function() { 
 
     Route::get('/dashboard', [App\Http\Controllers\backend\DashboardController::class, 'index'])->name('dashboard');
 
