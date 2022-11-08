@@ -173,7 +173,7 @@ class ProductController extends Controller
     {
         $product= Product::findOrFail($id);
         $product->delete();
-        unlink('images/product/'.$product->image);
+        // unlink('images/product/'.$product->image);
 
         return redirect()->route('product.index')->with('success','product deleted successfully');
 
