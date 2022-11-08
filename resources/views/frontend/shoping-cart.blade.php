@@ -291,6 +291,13 @@ $('.quantity_increment').click(function (e) {
 });
 });
 
+
+$.ajaxSetup({
+		headers:{
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	})
+
 $('.delete-cart').click(function (e) {
 	e.preventDefault();
 	//alert('he');
@@ -306,9 +313,9 @@ $('.delete-cart').click(function (e) {
 	// 	}
 	// })
 	$.ajax({
-		headers:{
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
+		// headers:{
+		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		// }
 	url: 'delete-cart',
 	type: "post",
 	data: {
