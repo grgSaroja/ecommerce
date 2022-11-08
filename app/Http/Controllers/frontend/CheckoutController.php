@@ -20,7 +20,6 @@ class CheckoutController extends Controller
                         $q->select('*');
                     }])->orderby('id')->where('user_id', auth()->user()->id)->get()->toArray();
     
-
         return view('frontend.checkout',compact('cartProduct'));
     }
 
@@ -34,7 +33,7 @@ class CheckoutController extends Controller
                      foreach ($cart['product'] as $prod){
                         $ticketInfo = explode('-', $prod['quantity']);
                         $total=$ticketInfo[0] * $prod['price'];
-                         order::create([
+                        $orders= order::create([
                             'user_id'=> auth()->id(),
                             'total'=>$total,
                             'quantity'=> $prod['quantity']
@@ -46,7 +45,7 @@ class CheckoutController extends Controller
                         }
                     }
 
-                    $orders = User::where('id', auth()->user()->id); 
+                   // $orders = User::where('id', auth()->user()->id); 
                     // Mail::send('notification.orderPlaced', new orderPlacedNotification($admin));
                     Mail::to('saroja.grg33@gmail.com')->send(new orderMail($orders));
                     // Mail::raw('order has been placed',function($message){
