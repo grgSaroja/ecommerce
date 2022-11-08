@@ -34,7 +34,7 @@ class CheckoutController extends Controller
                      foreach ($cart['product'] as $prod){
                         $ticketInfo = explode('-', $prod['quantity']);
                         $total=$ticketInfo[0] * $prod['price'];
-                            order::create([
+                         order::create([
                             'user_id'=> auth()->id(),
                             'total'=>$total,
                             'quantity'=> $prod['quantity']
