@@ -7,7 +7,7 @@
 <body>
     <div>
   
-      <p>   has placed the order</p>
+      <p> {{ $orders }}has placed the order</p>
 
 
 

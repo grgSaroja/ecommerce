@@ -41,12 +41,9 @@ class orderMail extends Mailable
      *
      * @return \Illuminate\Mail\Mailables\Content
      */
-    public function content()
+    public function build()
     {
-
-        return new Content(
-            view: 'emails.mySendMail',
-        );
+        return $this->view('emails.mySendMail');
     }
 
     /**
