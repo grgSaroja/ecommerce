@@ -23,7 +23,7 @@ class CartController extends Controller
     
     public function cart()
     {
-        $cartItems= Cart::with(['product'=>function($q){
+        $cartItems= cart::with(['product'=>function($q){
             $q->select('*');
         }])->orderby('id')->where('user_id', Auth::user()->id)->get()->toArray();
        
