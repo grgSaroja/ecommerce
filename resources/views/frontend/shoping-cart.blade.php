@@ -267,12 +267,6 @@ $('.quantity_increment').click(function (e) {
 
 	//alert(total);
 	
-	// data:{
-	// 	// 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-	// 	'id': product_id, 
-	// 	'quantity': quantity
-	
-	// }
 
 	$.ajaxSetup({
 		headers:{
@@ -306,15 +300,15 @@ $('.delete-cart').click(function (e) {
 
 	// alert(product_id);
 
-	$.ajaxSetup({
+	// $.ajaxSetup({
+	// 	headers:{
+	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	// 	}
+	// })
+	$.ajax({
 		headers:{
 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		}
-	})
-	$.ajax({
-		// headers:{
-		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		// }
 	url: 'delete-cart',
 	type: "post",
 	data: {
