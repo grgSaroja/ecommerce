@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\cart;
+use App\Models\Cart;
 use App\Models\cartProduct;
 use App\Models\order;
 use App\Models\Product;
