@@ -34,7 +34,6 @@
                     <h4 class="card-title">Product</h4>
                     @include('backend.layouts.flashMsg')
 
-                    <a href="{{ route('product.create') }}" class="btn btn-success create-btn">+ Create Product</a>
                     <div class="table-responsive">
                       <table class="table " >
                         <thead>

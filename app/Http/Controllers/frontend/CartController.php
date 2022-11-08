@@ -107,7 +107,7 @@ class CartController extends Controller
      */
     public function destroy(Request $request)
     {
-        $user=Auth::id();
+        //$user=Auth::id();
 
         if($request->ajax()){
            $data=$request->all();
