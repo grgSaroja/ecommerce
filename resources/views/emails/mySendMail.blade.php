@@ -7,10 +7,8 @@
 <body>
     <div>
   
-      @foreach($orders as $order)
-      <p>   {{ $order['first_name']; }} has placed the order</p>
+      <p>   has placed the order</p>
 
-        @endforeach
 
 
     </div>
