@@ -12,11 +12,12 @@ class GuestController extends Controller
     {
         $this->middleware('guest');
     }
-    
+
     public function index()
     {
         $product=Product::all();
-        return view('frontend.guestIndex', compact('product'));
+        // return view('frontend.guestIndex', compact('product'));
+        return view('welcome');
     }
 
     public function product_search(Request $request)
