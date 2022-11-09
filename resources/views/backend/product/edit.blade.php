@@ -69,7 +69,8 @@
   
                         <div class="form-group">
                           <label>File upload</label>
-                          <input type="file" name="upload_file" value="{{  $data->image }}"  class="file-upload-default">
+                          {{-- {{ URL::asset('/images/product/'.$products->image) }} --}}
+                          <input type="file" name="upload_file" value="{{ URL::asset('/images/product/'. $data->image) }}"  class="file-upload-default">
                           <div class="input-group col-xs-12">
                             <input type="text" class="form-control file-upload-info "  value=" {{ $data->image }}" disabled placeholder="Upload Image">
                             <span class="input-group-append">

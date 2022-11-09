@@ -141,6 +141,8 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->stock = $request->stock;
 // dd($product->image);
+//{{ URL::asset('/images/product/'.$products->image) }} 
+
          $path='images/product/'. $product->image;
         //  dd($path);
         if($request->hasFile('upload_file')){
