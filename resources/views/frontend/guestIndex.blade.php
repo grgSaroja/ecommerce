@@ -52,7 +52,7 @@
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img id="user_image" src=" {{ asset('/images/product/'.$products->image) }}" height="400px">
+							<img id="user_image" src=" {{ URL::asset('/images/product/'.$products->image) }}" height="400px">
 
 							<a href="{{ route('product.detail', $products->id) }}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
 								Quick View
