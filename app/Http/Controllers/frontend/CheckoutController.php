@@ -46,8 +46,7 @@ class CheckoutController extends Controller
                     }
 
                    // $orders = User::where('id', auth()->user()->id); 
-                    // Mail::send('notification.orderPlaced', new orderPlacedNotification($admin));
-                    Mail::to('saroja.grg33@gmail.com')->send(new orderMail($orders));
+                   Mail::to('saroja.grg33@gmail.com')->send(new orderMail($orders));
                     // Mail::raw('order has been placed',function($message){
                     //     $message->to('saroja.grg33@gmail.com');
                     // });
