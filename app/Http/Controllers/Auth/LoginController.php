@@ -46,9 +46,8 @@ class LoginController extends Controller
             return redirect('home');
 
         } else {
+            
             return redirect('/');
-
-            // return redirect(route('index'));
         }
     }
 }
