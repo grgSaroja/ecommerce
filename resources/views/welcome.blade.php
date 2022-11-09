@@ -32,8 +32,8 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('frontend/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('frontend/css/util.csscss')}}">
-	<link rel="stylesheet" type="text/css" href="{{ URL::asset('frontend/css/main.csscss')}}">
+	<link rel="stylesheet" type="text/css" href="frontend/css/util.css">
+	<link rel="stylesheet" type="text/css" href="frontend/css/main.css">
 <!--===============================================================================================-->
 
 

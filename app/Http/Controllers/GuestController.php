@@ -16,8 +16,8 @@ class GuestController extends Controller
     public function index()
     {
         $product=Product::all();
-        // return view('frontend.guestIndex', compact('product'));
-        return view('welcome', compact('product'));
+        return view('frontend.guestIndex', compact('product'));
+        //return view('welcome', compact('product'));
     }
 
     public function product_search(Request $request)
