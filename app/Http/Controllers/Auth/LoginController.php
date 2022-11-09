@@ -43,11 +43,11 @@ class LoginController extends Controller
             return redirect('admin/dashboard');
         }
         elseif($user->hasRole('user')){
-            return redirect('home');
+            return redirect('front/home');
 
         } else {
             
-            return redirect(route('index'));
+            return redirect('/');
         }
     }
 }
