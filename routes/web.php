@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\GuestController::class, 'index'])->name('index');
-Route::get('/gsearch', [App\Http\Controllers\GuestController::class, 'product_search'])->name('search');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('name');
+// Route::get('/gsearch', [App\Http\Controllers\GuestController::class, 'product_search'])->name('search');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
