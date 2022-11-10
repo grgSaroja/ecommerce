@@ -234,13 +234,9 @@
 			</div>
 		@endif
 		</div>
-
-
 		
 	</form>
 		
-
-
 	<!-- Back to top -->
 	<div class="btn-back-to-top" id="myBtn">
 		<span class="symbol-btn-back-to-top">
@@ -292,11 +288,11 @@ $('.quantity_increment').click(function (e) {
 });
 
 
-$.ajaxSetup({
-		headers:{
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-		}
-	})
+// $.ajaxSetup({
+// 		headers:{
+// 			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+// 		}
+// 	})
 
 $('.delete-cart').click(function (e) {
 	e.preventDefault();
@@ -307,11 +303,11 @@ $('.delete-cart').click(function (e) {
 
 	// alert(product_id);
 
-	// $.ajaxSetup({
-	// 	headers:{
-	// 		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	// 	}
-	// })
+	$.ajaxSetup({
+		headers:{
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		}
+	})
 	$.ajax({
 		// headers:{
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
