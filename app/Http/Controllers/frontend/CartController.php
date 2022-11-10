@@ -115,7 +115,7 @@ class CartController extends Controller
                    //echo "<pre>"; print_r($hasUser->id); die;
                   
        // if($hasUser){
-            cartProduct::where('product_id', $id)->delete();
+            cartProduct::where('product_id', $data['productId'])->delete();
             cart::where('id', $data['cartId'])->delete();
 
       
