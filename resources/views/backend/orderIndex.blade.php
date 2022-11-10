@@ -44,7 +44,7 @@
                             <th>status</th>
                             <th>Total</th>
                             <th>Quantity</th>
-                            <th>Action</th>
+                            {{-- <th>Action</th> --}}
                           </tr>
                         </thead>
                         <tbody>
@@ -98,9 +98,9 @@
                     {data: 'user_id', name: 'user_id'},
                     {data: 'status', name: 'status'},
                     {data: 'total', name: 'total'},
-                    {data: 'quantity', name: 'quantity'},
+                    {data: 'quantity', name: 'quantity',
                  
-                    {data: 'action', name: 'action', 
+                    // {data: 'action', name: 'action', 
 
                     orderable: false,
                     searchable: false},
