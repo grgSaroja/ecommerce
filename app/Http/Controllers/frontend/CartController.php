@@ -91,10 +91,10 @@ class CartController extends Controller
             $q->select('*');
         }])->orderby('id')->where('user_id', Auth::user()->id)->get();
 
-        return response()->json(['status'=>'product updated success']);
+        return response()->json(['success','product updated success']);
         }
         else{
-            return response()->json(['status'=>'product updated success']);
+            return response()->json(['success','product updated success']);
     
                 }
        }
@@ -119,10 +119,10 @@ class CartController extends Controller
             cart::where('id', $data['cartId'])->delete();
 
       
-             return response()->json(['status'=>'product updated success']);
+             return response()->json(['success','product updated success']);
          }
             else{
-                return response()->json(['status'=>'product updated success']);
+                return response()->json(['success','product updated success']);
     
        
     }
