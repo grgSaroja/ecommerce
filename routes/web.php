@@ -29,11 +29,7 @@ Route::put('/profile/update/{id}', [App\Http\Controllers\HomeController::class, 
 Route::get('/search', [App\Http\Controllers\HomeController::class, 'product_search'])->name('home.search');
 
 // forntend routes
-Route::group(['middleware' => ['auth', 'role:user'], 'prefix'=>'front'], function() { 
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/profile/edit/{id}', [App\Http\Controllers\HomeController::class, 'edit_profile'])->name('home.profile');
-Route::put('/profile/update/{id}', [App\Http\Controllers\HomeController::class, 'update_profile'])->name('profile.update');
-Route::get('/search', [App\Http\Controllers\HomeController::class, 'product_search'])->name('home.search');   
+Route::group(['middleware' => ['auth', 'role:user'], 'prefix'=>'front'], function() {  
 
 Route::get('/cart', [App\Http\Controllers\frontend\CartController::class, 'cart'])->name('cart');
 Route::post('update-cart', [App\Http\Controllers\frontend\CartController::class, 'update'])->name('cart.update');
