@@ -12,6 +12,7 @@
 		}
 	</style>
 
+
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="{{ URL::asset('frontend/images/icons/favicon.png')}}"/>
 <!--===============================================================================================-->
@@ -36,6 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('frontend/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('frontend/css/main.css')}}">
 <!--===============================================================================================-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 
 </head>
