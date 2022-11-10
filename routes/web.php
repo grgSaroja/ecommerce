@@ -32,8 +32,8 @@ Route::get('/search', [App\Http\Controllers\HomeController::class, 'product_sear
 Route::group(['middleware' => ['auth', 'role:user'], 'prefix'=>'front'], function() {  
 
 Route::get('/cart', [App\Http\Controllers\frontend\CartController::class, 'cart'])->name('cart');
-Route::post('/cart/update-cart', [App\Http\Controllers\frontend\CartController::class, 'update'])->name('cart.update');
-Route::post('/cart/delete-cart', [App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.delete');
+Route::post('update-cart', [App\Http\Controllers\frontend\CartController::class, 'update'])->name('cart.update');
+Route::post('delete-cart', [App\Http\Controllers\frontend\CartController::class, 'destroy'])->name('cart.delete');
 
 Route::get('/order-index', [App\Http\Controllers\frontend\CheckoutController::class, 'index'])->name('orders.index');
 Route::get('/checkout', [App\Http\Controllers\frontend\CheckoutController::class, 'checkout'])->name('order.checkout');

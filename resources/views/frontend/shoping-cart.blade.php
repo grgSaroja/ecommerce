@@ -273,7 +273,7 @@ $('.quantity_increment').click(function (e) {
 		// headers:{
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		// }
-	url: '/cart/update-cart',
+	url: 'update-cart',
 	type: "post",
 	data: {
 		//_token: $('meta[name="csrf-token"]').attr('content'),
@@ -312,7 +312,7 @@ $('.delete-cart').click(function (e) {
 		// headers:{
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		// }
-	url: '/cart/delete-cart',
+	url: 'delete-cart',
 	type: "post",
 	data: {
 		// _method: delete,
