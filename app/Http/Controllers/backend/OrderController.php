@@ -23,7 +23,7 @@ class OrderController extends Controller
 
                     ->editColumn('user', function($data)
                     {
-                       return $data->user;
+                       return $data->user->first_name;
                     })
                     // ->rawColumns(['action'])
                     ->make(true);
