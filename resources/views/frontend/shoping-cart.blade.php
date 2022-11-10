@@ -313,9 +313,9 @@ $('.delete-cart').click(function (e) {
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		// }
 	url: 'delete-cart/'+product_id,
-	type: "DELETE",
+	type: "post",
 	data: {
-		
+		_method: delete,
 		productId: product_id,
 		cartId: cart_id,
 	},
