@@ -95,7 +95,7 @@
                 ajax: "{{ route('order.index') }}",
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'user_id', name: 'user_id'},
+                    {data: 'user', name: 'user'},
                     {data: 'status', name: 'status'},
                     {data: 'total', name: 'total'},
                     {data: 'quantity', name: 'quantity',

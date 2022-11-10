@@ -17,18 +17,15 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = order::select('*');
+            $data = order::with('user');
             return DataTables::of($data)
                     ->addIndexColumn()
 
-                    // ->addColumn('action', function ($row) {
-                    //     $actionBtn = '<a class="btn btn-sm btn-info"
-                    //     href="' . route('product.show', $row->id) . '">Show</a>';
-
-                   
-                    //     return $actionBtn;
-                    // })
-                    ->rawColumns(['action'])
+                    ->editColumn('user', function($data)
+                    {
+                       return $data->user->first_name;
+                    })
+                    // ->rawColumns(['action'])
                     ->make(true);
 
                 
