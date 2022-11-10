@@ -29,7 +29,7 @@ class OrderController extends Controller
                     //     return $actionBtn;
                     // })
                     ->rawColumns(['action'])
-                    ->make(true);
+                    ->make(false);
 
                 
         }
