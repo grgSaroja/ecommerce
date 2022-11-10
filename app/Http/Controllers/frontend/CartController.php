@@ -105,7 +105,7 @@ class CartController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy(Request $request, $id)
     {
         //$user=Auth::id();
 
@@ -115,7 +115,7 @@ class CartController extends Controller
                    //echo "<pre>"; print_r($hasUser->id); die;
                   
        // if($hasUser){
-            cartProduct::where('product_id', $data['productId'])->delete();
+            cartProduct::where('product_id', $id)->delete();
             cart::where('id', $data['cartId'])->delete();
 
       

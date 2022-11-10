@@ -312,9 +312,10 @@ $('.delete-cart').click(function (e) {
 		// headers:{
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		// }
-	url: 'delete-cart',
-	type: "post",
+	url: 'delete-cart/'+product_id,
+	type: "DELETE",
 	data: {
+		
 		productId: product_id,
 		cartId: cart_id,
 	},
