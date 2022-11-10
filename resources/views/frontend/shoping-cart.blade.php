@@ -322,6 +322,9 @@ $('.delete-cart').click(function (e) {
 	success: function (response) {
 		window.location.reload();
 		//alert(response);
+	},
+	error: function(xhr){
+		console.log(xhr.responseText);
 	}
 });
 });
