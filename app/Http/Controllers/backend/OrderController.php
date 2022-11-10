@@ -20,14 +20,6 @@ class OrderController extends Controller
             $data = order::select('*');
             return DataTables::of($data)
                     ->addIndexColumn()
-
-                    ->addColumn('action', function ($row) {
-                        $actionBtn = '<a class="btn btn-sm btn-info"
-                        href="' . route('product.show', $row->id) . '">Show</a>';
-
-                   
-                        return $actionBtn;
-                    })
                     ->rawColumns(['action'])
                     ->make(true);
 
