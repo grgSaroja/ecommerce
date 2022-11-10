@@ -301,7 +301,7 @@ $('.delete-cart').click(function (e) {
 	var product_id=$(this).closest('.deldata').find('.productId').val();
 	var cart_id=$(this).closest('.deldata').find('.cartId').val();
 
-	alert(product_id);
+	//alert(product_id);
 
 	$.ajaxSetup({
 		headers:{
@@ -312,8 +312,8 @@ $('.delete-cart').click(function (e) {
 		// headers:{
 		// 	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 		// }
-	url: 'delete-cart',
-	type: "post",
+	url: '/delete-cart',
+	type: "delete",
 	data: {
 		// _method: delete,
 		productId: product_id,
