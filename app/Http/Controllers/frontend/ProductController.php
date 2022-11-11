@@ -15,10 +15,7 @@ use Helper;
 class ProductController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth')->except('details');
-    }
+   
     /**
      * Display a listing of the resource.
      *
