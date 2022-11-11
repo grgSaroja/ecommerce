@@ -68,7 +68,7 @@
 											{{-- <button class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m  quantity_increment "  >
 												Remove
 											</button> --}}
-											<button class=" btn btn-danger delete-cart" style="margin: 70px;">
+											<button class=" btn btn-danger delete-cart" style="margin-left: 80px;">
 												Remove
 											</button>
 										</div>
