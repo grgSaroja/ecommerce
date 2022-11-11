@@ -17,7 +17,7 @@
 									<th class="column-1">Product</th>
 									<th class="column-3">Price</th>
 									<th class="column-4">Quantity</th>
-									<th class="column-5">Total</th>
+									{{-- <th class="column-5">Total</th> --}}
 									<th class="column-5">Action</th>
 								</tr>
 								@php
@@ -57,8 +57,8 @@
 											</button>
 										</div>
 									</td>
-									<td class="column-5">Rs.{{ $prod['price']  }}</td>
-									<td class="column-4">
+									{{-- <td class="column-5">Rs.{{ $prod['price']  }}</td> --}}
+									<td class="column-5">
 										<div class=" col-md-2 deldata">
 											
 											<input class="mtext-104 cl3 txt-center productId" type="hidden" value= "{{ $prod['product_id']}}" >
